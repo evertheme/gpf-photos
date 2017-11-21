@@ -1,0 +1,802 @@
+//
+// Color Palette
+//
+
+//== Base
+//== Value Scales
+
+$spacing-half: 5px;
+
+
+//== Base
+//
+
+$gray-base:             #353D40		!default;
+$red-base:				#E31B23 	!default;
+$orange-base:			#F68A33 	!default;
+$gold-base:				#FDBB30 	!default;
+$yellow-base:			#FFE512 	!default;
+$lt-green-base:			#C1D82F 	!default;
+$green-base:			#54B948 	!default;
+$teal-base:			    #00A19B 	!default;
+$cyan-base:			    #007FA3 	!default;
+$lt-blue-base:			#72CDF4 	!default;
+$blue-base:				#009DDC 	!default;
+$dk-blue-base:			#00539B 	!default;
+$purple-base:			#92278F 	!default;
+$burgundy-base:			#96172E 	!default;
+
+
+
+
+//== Value Scales
+//
+
+$gray-shade-50:			#1B1F20 	!default;
+$gray-shade-25:			#282E30 	!default;
+$gray-tint-10:			#495053 	!default;
+$gray-tint-25:			#676D6F 	!default;
+$gray-tint-35:			#7C8183 	!default;
+$gray-tint-50:			#9A9E9F 	!default;
+$gray-tint-75:			#C6C7C7 	!default;
+$gray-tint-90:			#EAEBEC 	!default;
+$gray-tint-92:			#EEEFEF 	!default;
+$gray-tint-95:			#F5F5F5 	!default;
+$gray-tint-97:			#F9F9F9 	!default;
+
+$red-shade-25:			#AB141A 	!default;
+$red-tint-25:			#EA5359 	!default;
+$red-tint-50:			#F18D91 	!default;
+$red-tint-75:			#F8C6C8 	!default;
+$red-tint-90:			#FCE8E9 	!default;
+
+$orange-shade-25:		#B96726  	!default;
+$orange-tint-25:		#F8A665 	!default;
+$orange-tint-50:		#FAC499 	!default;
+$orange-tint-75:		#FDE2CC 	!default;
+$orange-tint-90:		#FEF3EA  	!default;
+
+$gold-shade-25:			#B38D24 	!default;
+$gold-tint-25:			#FDCC63 	!default;
+$gold-tint-50:			#FEDD97 	!default;
+$gold-tint-75:			#FEEECB 	!default;
+$gold-tint-90:			#FFF8EA 	!default;
+
+$yellow-shade-25:		#C0AB0E 	!default;
+$yellow-tint-25:		#FFEA4D 	!default;
+$yellow-tint-50:		#FFF288  	!default;
+$yellow-tint-75:		#FFF8C4 	!default;
+$yellow-tint-90:		#FFFCE7 	!default;
+
+$lt-green-shade-25:		#90A323 	!default;
+$lt-green-tint-25:		#CFE262 	!default;
+$lt-green-tint-50:		#E0EB97 	!default;
+$lt-green-tint-75:		#EFF5CB 	!default;
+$lt-green-tint-90:		#F9FBEA 	!default;
+
+$green-shade-25:		#3F8B36 	!default;
+$green-tint-25:			#7ECA75 	!default;
+$green-tint-50:			#A9DCA3 	!default;
+$green-tint-75:			#D4EDD1 	!default;
+$green-tint-90:			#EEF8EC 	!default;
+
+$teal-shade-25:		    #007975 	!default;
+$teal-tint-25:			#3FB8B4 	!default;
+$teal-tint-50:			#7FD0CD 	!default;
+$teal-tint-75:			#BFE7E6 	!default;
+$teal-tint-90:			#E5F5F5 	!default;
+
+$cyan-shade-25:		    #00607B 	!default;
+$cyan-tint-25:			#3F9FBA 	!default;
+$cyan-tint-50:			#7FBFD1 	!default;
+$cyan-tint-75:			#BFDFE8 	!default;
+$cyan-tint-90:			#E5F2F6 	!default;
+
+$lt-blue-shade-75:      #223E4A     !default;
+$lt-blue-shade-65:      #2C4F5E     !default;
+$lt-blue-shade-60:      #305767     !default;
+$lt-blue-shade-50:      #39677A     !default;
+$lt-blue-shade-25:		#569AB8  	!default;
+$lt-blue-tint-25:		#95D9F7 	!default;
+$lt-blue-tint-50:		#B8E6F9 	!default;
+$lt-blue-tint-75:		#DCF2FC 	!default;
+$lt-blue-tint-90:		#F1FAFE 	!default;
+
+$blue-shade-75:         #002737     !default;
+$blue-shade-65:         #00374E     !default;
+$blue-shade-60:         #003F58     !default;
+$blue-shade-50:         #004F6E     !default;
+$blue-shade-25:			#0075A6 	!default;
+$blue-tint-25:			#3FB4E5 	!default;
+$blue-tint-50:			#7FCEED 	!default;
+$blue-tint-75:			#BFE6F6 	!default;
+$blue-tint-90:			#E5F5FB 	!default;
+
+$dk-blue-shade-25:		#003E75 	!default;
+$dk-blue-tint-25:		#3F7DB4 	!default;
+$dk-blue-tint-50:		#7FA9CD 	!default;
+$dk-blue-tint-75:		#BFD4E6 	!default;
+$dk-blue-tint-90:		#E5EDF5  	!default;
+
+$purple-shade-25:		#6E1D6C 	!default;
+$purple-tint-25:		#AD5CAB 	!default;
+$purple-tint-50:		#C893C7 	!default;
+$purple-tint-75:		#E4C9E3 	!default;
+$purple-tint-90:		#F4E9F4 	!default;
+
+$burgundy-shade-25:		#711123 	!default;
+$burgundy-tint-25:		#B05062 	!default;
+$burgundy-tint-50:		#CA8B96 	!default;
+$burgundy-tint-75:		#E5C5CB 	!default;
+$burgundy-tint-90:		#F4E7EA 	!default;
+
+.ag-evertheme {
+  font-size: .9rem;
+  color: $gray-tint-25;
+
+  :focus {
+    outline: 0;
+  }
+  img {
+    vertical-align: middle;
+    border: 0;
+  }
+  .ag-root {
+    border: 0;
+  }
+  .ag-cell-data-changed {
+    background-color: $gray-tint-92;
+  }
+  .ag-cell-data-changed-animation {
+    background-color: transparent;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  .ag-cell-not-inline-editing {
+    padding: 8px 6px 0px 6px;
+  }
+  .ag-cell-range-selected-1:not(.ag-cell-focus) {
+    background-color: rgba(120, 120, 120, 0.4);
+  }
+  .ag-cell-range-selected-2:not(.ag-cell-focus) {
+    background-color: rgba(80, 80, 80, 0.4);
+  }
+  .ag-cell-range-selected-3:not(.ag-cell-focus) {
+    background-color: rgba(40, 40, 40, 0.4);
+  }
+  .ag-cell-range-selected-4:not(.ag-cell-focus) {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .ag-cell-focus {
+    border: 1px solid transparent;
+    border-bottom: 1px solid $gray-tint-90;
+  }
+  .ag-cell-no-focus {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid $gray-tint-90;
+  }
+  .ag-ltr .ag-cell-no-focus {
+    border-right: 1px dotted $gray-tint-90;
+    border-left: 1px solid transparent;
+  }
+  .ag-rtl {
+    .ag-cell-no-focus {
+      border-right: 1px solid transparent;
+      border-left: 1px dotted $gray-tint-90;
+    }
+    .ag-cell-first-right-pinned {
+      border-left: 1px solid $gray-tint-90;
+    }
+  }
+  .ag-cell-edit-input {
+    height: calc(100% - 8px) !important;
+    width: calc(100% - 8px) !important;
+  }
+  .ag-ltr .ag-cell-first-right-pinned {
+    border-left: 1px solid $gray-tint-90;
+  }
+  .ag-rtl .ag-cell-last-left-pinned, .ag-ltr .ag-cell-last-left-pinned {
+    border-right: 1px solid $gray-tint-90;
+  }
+  .ag-cell-highlight {
+    border: 1px solid $lt-blue-base;
+  }
+  .ag-cell-highlight-animation {
+    -webkit-transition: border 1s;
+    -moz-transition: border 1s;
+    -o-transition: border 1s;
+    -ms-transition: border 1s;
+    transition: border 1s;
+  }
+  .ag-value-change-delta {
+    padding-right: 2px;
+  }
+  .ag-value-change-delta-up {
+    color: $lt-blue-base;
+  }
+  .ag-value-change-delta-down {
+    color: $red-tint-50;
+  }
+  .ag-value-change-value {
+    background-color: transparent;
+    border-radius: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  .ag-value-change-value-highlight {
+    background-color: $gray-tint-92;
+    -webkit-transition: background-color 0.1s;
+    -moz-transition: background-color 0.1s;
+    -o-transition: background-color 0.1s;
+    -ms-transition: background-color 0.1s;
+    transition: background-color 0.1s;
+  }
+  .ag-rich-select {
+    font-size: 14px;
+    border: 1px solid $gray-tint-90;
+    background-color: #fff;
+  }
+  .ag-rich-select-value {
+    padding: 2px;
+  }
+  .ag-rich-select-list {
+    border-top: 1px solid $gray-tint-92;
+  }
+  .ag-rich-select-row {
+    padding: 2px;
+  }
+  .ag-rich-select-row-selected {
+    background-color: #c7c7c7;
+  }
+  .ag-large-text {
+    border: 1px solid $gray-tint-90;
+  }
+  .ag-header-select-all {
+    padding: 5px 0px 0px 3px;
+    line-height: 0;
+  }
+  .ag-header {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $gray-tint-25;
+    background: #fff;
+    border-bottom: 1px solid $gray-tint-75;
+    font-weight: 600;
+  }
+  .ag-header-icon {
+    color: $gray-tint-25;
+    stroke: none;
+    fill: $gray-tint-25;
+  }
+  .ag-layout-for-print .ag-header-container {
+    background: #5b9bd5;
+    border-bottom: 1px solid $gray-tint-90;
+  }
+  .ag-ltr .ag-header-cell {
+    text-align: left;
+    border-right: 1px solid $gray-tint-90;
+    .ag-cell-label-container {
+      height: 100%;
+      width: 100%;
+      padding: 8px 6px 4px 6px;
+      .ag-header-cell-label {
+        height:100%;
+        width:100%;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+    .edit-button {
+      display: inline-block;
+      padding-right: 0;
+      padding-left: 0;
+      float: right;
+    }
+    &.text-right {
+      text-align: right;
+      .edit-button {
+        float: left;
+      }
+      .ag-header-cell-label {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  .ag-rtl .ag-header-cell {
+    border-left: 1px solid $gray-tint-90;
+  }
+  .ag-header-cell-moving {
+    .ag-header-cell-label {
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity = 50);
+    }
+    background-color: #bebebe;
+  }
+  .ag-ltr .ag-header-group-cell {
+    border-right: 1px solid $gray-tint-90;
+  }
+  .ag-rtl .ag-header-group-cell {
+    border-left: 1px solid $gray-tint-90;
+  }
+  .ag-header-group-cell-with-group {
+    background-color: #d5e3ef;
+    border-bottom: 1px solid $gray-tint-90;
+  }
+  .ag-header-cell-label {
+    padding: 4px 2px 4px 2px;
+  }
+  .ag-header-cell-text {
+    padding-left: 0;
+    display: inline-block;
+  }
+  .ag-header-group-cell-label {
+    height: 100%;
+    padding: 8px 6px 4px 6px;
+    text-align: center;
+  }
+  .ag-pinned-left-cols-viewport,
+  .ag-pinned-left-header {
+    box-shadow: 1px 0px 4px 0px rgba(0, 0, 0, 0.15);
+    border-right: 0;
+    position: relative;
+    z-index: 2;
+    .ag-header-group-cell {
+      border-right: 0;
+    }
+  }
+  .ag-body-viewport-wrapper,
+  .ag-header-viewport {
+    position: relative;
+    z-index: 1;
+  }
+  .ag-header-viewport .ag-header-group-cell-label {
+    border-right:1px solid #fff;
+  }
+  .ag-ltr .ag-header-group-cell-label {
+    padding-left: 6px;
+  }
+  .ag-rtl {
+    .ag-header-group-cell-label {
+      padding-right: 6px;
+    }
+    .ag-header-group-text {
+      margin-left: 0;
+    }
+  }
+  .ag-ltr .ag-header-group-text {
+    margin-right: 0;
+  }
+  .ag-header-cell-menu-button {
+    padding: 2px;
+    margin-top: 4px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    line-height: 0px;
+  }
+  .ag-ltr .ag-pinned-right-header {
+    border-left: 1px solid $gray-tint-90;
+  }
+  .ag-rtl .ag-pinned-left-header {
+    border-right: 1px solid $gray-tint-90;
+  }
+  .ag-header-cell-menu-button:hover {
+    border: 1px solid $gray-tint-90;
+  }
+  .ag-body {
+    background-color: #fff;
+  }
+  .ag-row-odd {
+    background-color: transparent;
+  }
+  .ag-row-even {
+    background-color: transparent;
+  }
+  .ag-row-selected {
+    background-color: $gray-tint-97;
+  }
+  .ag-row-stub {
+    background-color: #fff;
+  }
+  .ag-stub-cell {
+    padding: 2px 2px 2px 10px;
+  }
+  .ag-floating-top, .ag-floating-bottom {
+    background-color: #f0f0f0;
+    .ag-row {
+      background-color: #f0f0f0;
+    }
+  }
+  .ag-overlay-loading-wrapper {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .ag-overlay-loading-center {
+    background-color: #fff;
+    border: 1px solid $gray-tint-90;
+    border-radius: 10px;
+    padding: 10px;
+    color: #000;
+  }
+  .ag-overlay-no-rows-center {
+    background-color: #fff;
+    border: 1px solid $gray-tint-90;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .ag-group-cell-entire-row, .ag-footer-cell-entire-row {
+    background-color: #f6f6f6;
+    padding: 2px;
+  }
+  .ag-group-cell {
+    font-style: italic;
+  }
+  .ag-ltr .ag-group-expanded {
+    padding-right: 4px;
+  }
+  .ag-rtl .ag-group-expanded {
+    padding-left: 4px;
+  }
+  .ag-ltr .ag-group-contracted {
+    padding-right: 4px;
+  }
+  .ag-rtl .ag-group-contracted {
+    padding-left: 4px;
+  }
+  .ag-ltr .ag-group-loading {
+    padding-right: 4px;
+  }
+  .ag-rtl .ag-group-loading {
+    padding-left: 4px;
+  }
+  .ag-ltr .ag-group-value {
+    padding-right: 2px;
+  }
+  .ag-rtl .ag-group-value {
+    padding-left: 2px;
+  }
+  .ag-ltr .ag-group-checkbox {
+    padding-right: 2px;
+  }
+  .ag-rtl .ag-group-checkbox {
+    padding-left: 2px;
+  }
+  .ag-group-child-count {
+    display: inline-block;
+  }
+  .ag-footer-cell {
+    font-style: italic;
+  }
+  .ag-menu {
+    border: 1px solid #808080;
+    background-color: #f6f6f6;
+    cursor: default;
+    font-family: 'TheinhardtRegular', Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    .ag-tab-header {
+      background-color: #5b9bd5;
+    }
+    .ag-tab {
+      padding: 6px 8px 6px 8px;
+      margin: 2px 2px 0px 2px;
+      display: inline-block;
+      border-right: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-top: 1px solid transparent;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+    .ag-tab-selected {
+      background-color: $gray-tint-90;
+      border-right: 1px solid $gray-tint-92;
+      border-left: 1px solid $gray-tint-92;
+      border-top: 1px solid $gray-tint-92;
+    }
+  }
+  .ag-menu-separator {
+    border-top: 1px solid $gray-tint-92;
+  }
+  .ag-menu-option-active {
+    background-color: #c7c7c7;
+  }
+  .ag-menu-option-icon, .ag-menu-option-text {
+    padding: 2px 4px 2px 4px;
+    vertical-align: middle;
+  }
+  .ag-menu-option-shortcut {
+    padding: 2px 2px 2px 2px;
+    vertical-align: middle;
+  }
+  .ag-menu-option-popup-pointer {
+    padding: 2px 4px 2px 4px;
+    vertical-align: middle;
+  }
+  .ag-menu-option-disabled {
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity = 50);
+  }
+  .ag-menu-column-select-wrapper {
+    margin: 2px;
+  }
+  .ag-filter-checkbox {
+    position: relative;
+    left: 2px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .ag-filter-header-container {
+    border-bottom: 1px solid $gray-tint-92;
+  }
+  .ag-filter-apply-panel {
+    border-top: 1px solid $gray-tint-92;
+    padding: 2px;
+  }
+  .ag-filter-value {
+    margin-left: 4px;
+  }
+  .ag-ltr .ag-selection-checkbox {
+    padding-right: 4px;
+  }
+  .ag-rtl .ag-selection-checkbox {
+    padding-left: 4px;
+  }
+  .ag-paging-panel {
+    padding: 4px;
+  }
+  .ag-paging-button {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  .ag-paging-row-summary-panel {
+    display: inline-block;
+    width: 300px;
+  }
+  .ag-tool-panel {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid $gray-tint-90;
+    border-top: 1px solid $gray-tint-90;
+    color: #222;
+  }
+  .ltr .ag-tool-panel {
+    border-right: 1px solid $gray-tint-90;
+  }
+  .rtl .ag-tool-panel {
+    border-left: 1px solid $gray-tint-90;
+  }
+  .ag-status-bar {
+    color: #222;
+    background-color: #f6f6f6;
+    font-size: 10pt;
+    height: 22px;
+    border-bottom: 1px solid $gray-tint-90;
+    border-left: 1px solid $gray-tint-90;
+    border-right: 1px solid $gray-tint-90;
+    padding: 2px;
+  }
+  .ag-status-bar-aggregations {
+    float: right;
+  }
+  .ag-status-bar-item {
+    padding-left: 10px;
+  }
+  .ag-column-drop-cell {
+    background: #ddebf7;
+    color: #000;
+    border: 1px solid #808080;
+  }
+  .ag-column-drop-cell-ghost {
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity = 50);
+  }
+  .ag-column-drop-cell-text {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .ag-column-drop-cell-button {
+    border: 1px solid transparent;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 4px;
+    &:hover {
+      border: 1px solid $gray-tint-90;
+    }
+  }
+  .ag-column-drop-empty-message {
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #808080;
+  }
+  .ag-column-drop-icon {
+    margin: 3px;
+  }
+  .ag-column-drop {
+    background-color: #f6f6f6;
+  }
+  .ag-column-drop-horizontal {
+    padding: 2px;
+    border-top: 1px solid $gray-tint-90;
+    border-left: 1px solid $gray-tint-90;
+    border-right: 1px solid $gray-tint-90;
+  }
+  .ag-column-drop-vertical {
+    padding: 4px 4px 10px 4px;
+    border-bottom: 1px solid $gray-tint-90;
+    overflow: auto;
+    .ag-column-drop-cell {
+      margin-top: 2px;
+    }
+    .ag-column-drop-empty-message {
+      text-align: center;
+      padding: 5px;
+    }
+  }
+  .ag-pivot-mode {
+    border-bottom: 1px solid $gray-tint-90;
+    padding: 4px;
+    background-color: #f6f6f6;
+  }
+  .ag-tool-panel .ag-column-select-panel {
+    border-bottom: 1px solid $gray-tint-90;
+    overflow: auto;
+  }
+  .ag-select-agg-func-popup {
+    cursor: default;
+    position: absolute;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid $gray-tint-90;
+  }
+  .ag-select-agg-func-item {
+    padding-left: 2px;
+    padding-right: 2px;
+    &:hover {
+      background-color: #c7c7c7;
+    }
+  }
+  .ag-floating-filter-button, .ag-floating-filter-body input {
+    background-color: #fff;
+    color: #222;
+  }
+}
+
+
+// TODO: additions for gridview implementation in MWS. need to combine above
+
+.ag-arrow {
+  font-size: 11px;
+  line-height: 1.2;
+
+  .ag-cell {
+    overflow: visible;
+
+    &.ag-cell-inline-editing {
+      text-align: left !important;
+
+      .ag-cell-edit-input {
+        font-size: 11px;
+        margin: 4px 0 0 4px;
+        padding: 2px;
+      }
+    }
+    &.ag-cell-not-inline-editing {
+      padding: 0;
+
+      a, .default-cell-wrap {
+        padding: 6px 6px 0px 6px;
+      }
+    }
+  }
+
+  .ag-header-cell {
+    .ag-header-cell-text {
+      white-space: normal;
+    }
+
+    // editing a column
+    &.edit-mode {
+      background: $dk-blue-tint-25;
+      color: #FFF;
+
+      .edit-button {
+        display: none;
+      }
+    }
+  }
+
+
+  // column group headers
+  .ag-header-group-cell {
+    background: $dk-blue-tint-90;
+    border-right-color: $gray-tint-75 !important;
+    color: $lt-blue-shade-50;
+    // font-family: $font-header-base;
+    text-transform: uppercase;
+    padding: $spacing-half;
+
+    .ag-header-group-cell-label {
+      border-right: none;
+      padding: 0;
+    }
+  }
+
+  // alternate row colors
+  .ag-row:nth-child(even) {
+    background-color: $gray-tint-95;
+  }
+
+  // editing a row
+  .ag-row.ag-row-editing {
+    > div {
+      background: $dk-blue-tint-90;
+
+      &[colid="1"] {
+        background: $dk-blue-tint-25;
+
+        a {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // delete row functionality
+  .delete-row-wrapper {
+    div {
+      background-color: $gold-tint-90;
+    }
+
+    .delete-row {
+      font-style: italic;
+      height: 99%;
+      left: 63px;
+      padding: 8px 0 0 10px;
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .fa-pencil {
+      display: none;
+    }
+
+    .float-right, .truncate {
+      visibility: hidden;
+    }
+  }
+
+  .editable-cell, .default-edit-wrap {
+    background-color: $dk-blue-tint-90;
+    height: 100%;
+
+  }
+
+  .edited-cell {
+    background-color: $lt-blue-tint-50 !important;
+
+    .editable-cell {
+      background-color: $lt-blue-tint-50 !important;
+    }
+  }
+}
+
+.maximize-container {
+  .ag-arrow {
+    height: 100%;
+    width: 100%;
+  }
+}

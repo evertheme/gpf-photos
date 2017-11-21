@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-sm-8 text-left">
+    <button (click)="filterImages('')" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">All</button>
+    <button (click)="filterImages('weddings')" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">Weddings</button>
+    <button (click)="filterImages('sympathy')" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">Sympathy</button>
+    <button (click)="filterImages('occasions')" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">Occasions</button>
+  </div>
+  <div class="col-sm-4 text-right">
+    <button class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">Add Photo</button>
+  </div>
+</div>
+
+<div #inventoryRoot>
+  <div [ngStyle]="{'height': '' + gridHeight + 'px'}" (window:resize)="onResize($event)">
+    <ag-grid-angular
+      #inventoryGrid
+      style="width: 100%; height: 100%;"
+      class="ag-evertheme"
+      [gridOptions]="gridOptions"
+    >
+    </ag-grid-angular>
+  </div>
+
+  <!--Modal: Login with Avatar Form-->
+  <div mdbModal #editForm="mdb-modal" class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="Edit Image" aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-avatar modal-fluid" role="document">
+      <!--Content-->
+      <div class="modal-content">
+
+        <!--Header-->
+        <div class="modal-header edit-image-header">
+          <div style="width:300px; height:240px;">
+            <img src="/assets/img/gpf/{{editData.fileName}}" />
+          </div>
+        </div>
+        <!--Body-->
+        <div class="modal-body text-center">
+          <div class="row">
+
+            <div class="col-sm-4">
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="name" class="form-control" [(ngModel)]="editData.name" />
+                <label for="name" [ngClass]="{'active' : editData.name}">Name</label>
+              </div>
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="description" class="form-control" [(ngModel)]="editData.caption" />
+                <label for="description" [ngClass]="{'active' : editData.caption}">Description</label>
+              </div>
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="credits" class="form-control" [(ngModel)]="editData.credit" />
+                <label for="credits" [ngClass]="{'active' : editData.credit}">Photo Credits</label>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="id" class="form-control" [(ngModel)]="editData.oldId" />
+                <label for="id" [ngClass]="{'active' : editData.oldId}">ID</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="number" id="price" class="form-control" [(ngModel)]="editData.price" />
+                <label for="price" [ngClass]="{'active' : editData.price}">Price</label>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="md-form form-sm">
+                    <input mdbActive type="text" class="form-control" [(ngModel)]="newTag" id="tags">
+                    <label for="tags">Tag</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <button (click)="addTag()" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">Add Tag</button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-sm-4 text-left">
+              <div class="border-bottom">Tags</div>
+              <button type="button" *ngFor="let tag of editData.tags" (click)="removeTag(tag)" class="btn btn-info btn-rounded btn-sm waves-light photo-tags-button" mdbRippleRadius>{{tag}}&nbsp;&nbsp;<span class="fa fa-times"></span></button>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="text-left">
+                <div class="form-group  form-sm">
+                  <input type="checkbox" class="filled-in" id="archived" [(ngModel)]="editData.archive">
+                  <label for="archived">Archive</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="text-right">
+                <button (click)="onCancel()" class="btn btn-secondary btn-sm btn-cyan mt-1 waves-light" mdbRippleRadius>Cancel</button>
+                <button (click)="onSave()" class="btn btn-green mt-1 waves-light" mdbRippleRadius>Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: Login with Avatar Form-->
+</div>
