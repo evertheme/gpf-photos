@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" (window:resize)="onResize($event)">
   <div class="col-sm-8 text-left">
     <button (click)="filterImages('')" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">All</button>
     <button (click)="filterImages('weddings')" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">Weddings</button>
@@ -11,7 +11,7 @@
 </div>
 
 <div #inventoryRoot>
-  <div [ngStyle]="{'height': '' + gridHeight + 'px'}" (window:resize)="onResize($event)">
+  <div [ngStyle]="{'height': '' + gridHeight + 'px'}">
     <ag-grid-angular
       #inventoryGrid
       style="width: 100%; height: 100%;"
@@ -22,14 +22,14 @@
   </div>
 
   <!--Modal: Login with Avatar Form-->
-  <div mdbModal #editForm="mdb-modal" class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="Edit Image" aria-hidden="true">
+  <div mdbModal #editImageForm="mdb-modal" class="modal fade" id="editImageForm" tabindex="-1" role="dialog" aria-labelledby="Edit Image" aria-hidden="true">
     <div class="modal-dialog cascading-modal modal-avatar modal-fluid" role="document">
       <!--Content-->
       <div class="modal-content">
 
         <!--Header-->
-        <div class="modal-header edit-image-header">
-          <div style="width:300px; height:240px;">
+        <div class="modal-header edit-image-header text-center">
+          <div class="text-center" style="width:300px; height:240px; margin:0 auto;">
             <img src="/assets/img/gpf/{{editData.fileName}}" />
           </div>
         </div>

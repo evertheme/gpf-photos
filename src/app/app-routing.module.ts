@@ -1,47 +1,20 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { AuthGuard } from './auth/auth.guard';
+import { Routes, RouterModule } from '@angular/router';
 
-
+import { HomeComponent } from './feature/home/home.component';
+import { InventoryComponent } from './feature/inventory/inventory.component';
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: './feature/home/home.module#HomeModule'
-  },
-  {
-    path: 'profile',
-    loadChildren: './feature/profile/profile.module#ProfileModule'
-  },
-  {
-    path: 'join',
-    loadChildren: './feature/join/join.module#JoinModule'
-  },
-  {
-    path: 'upload',
-    loadChildren: './feature/uploads/shared/upload.module#UploadModule',
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'login',
-    loadChildren: './feature/user-login/user-login.module#UserLoginModule'
-  },
-  {
-    path: 'inventory',
-    loadChildren: './feature/inventory/inventory.module#InventoryModule'
-  }
+  { path: '', component: HomeComponent },
+  { path: 'inventory', component: InventoryComponent }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule
   ],
   providers: []
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule { }

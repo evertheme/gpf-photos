@@ -1,9 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
-import { MDBSpinningPreloader } from 'ng-mdb-pro';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -16,6 +13,8 @@ export const firebaseConfig = environment.firebaseConfig;
 // Shared
 import { AuthModule } from './auth/auth.module';
 import { UiModule } from './shared/ui/ui.module';
+import { HomeModule } from './feature/home/home.module';
+import { InventoryModule } from './feature/inventory/inventory.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,8 @@ import { UiModule } from './shared/ui/ui.module';
     AngularFireDatabaseModule,
     AuthModule,
     UiModule,
-    MDBBootstrapModules.forRoot(),
+    HomeModule,
+    InventoryModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

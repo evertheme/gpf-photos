@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
@@ -17,6 +17,7 @@ import { InventoryComponent } from './inventory.component';
 import { InventoryService } from './inventory.service';
 import { UploadInventoryComponent } from './upload-inventory/upload-inventory.component';
 
+import { ModalModule } from 'ng-mdb-pro/free';
 import { MDBBootstrapModules } from 'ng-mdb-pro';
 
 @NgModule({

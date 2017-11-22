@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild } from '@angular/core';
 import { GridOptions } from 'ag-grid';
 import { ModalDirective } from 'ng-mdb-pro/free/modals/modal.directive';
 import * as _ from 'lodash';
@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 import { GRID } from './inventory.constant';
 // import { Image } from './inventory.interface';
 import { InventoryService } from './inventory.service';
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-inventory',
@@ -24,8 +24,7 @@ export class InventoryComponent implements OnInit, OnDestroy, AfterViewInit {
   public newTag: string;
 
 
-  @ViewChild('editForm') public editImageModal: ModalDirective;
-  @ViewChild('inventoryRoot') public inventoryRoot: ElementRef;
+  @ViewChild('editImageForm') public editImageModal: ModalDirective;
 
   private currentFilter: any;
 
@@ -39,14 +38,13 @@ export class InventoryComponent implements OnInit, OnDestroy, AfterViewInit {
       tags: [],
       caption: '',
       credit: ''
-    }
+    };
 
   }
 
   ngOnInit() {
     console.log('InventoryComponent: ngOnInit');
-    console.log('inventoryRoot: ', this.inventoryRoot);
-    this.gridHeight = window.innerHeight - 108;
+    this.gridHeight = window.innerHeight - 150;
     this.gridOptions = <GridOptions>{
       rowHeight: 90,
       headerHeight: 34,
@@ -112,13 +110,12 @@ export class InventoryComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onRowClicked(params) {
     // console.log('onRowClicked: params: ', params);
+    console.log('this.editImageModal: ', this.editImageModal);
     this.currentImage = params.data;
     this.editData = this.currentImage;
     console.log('this.editData: ', this.editData);
     this.editImageModal.show();
     console.log('editImageModal: ', this.editImageModal);
-    console.log('inventoryRoot: ', this.inventoryRoot);
-    // this.inventoryRoot.nativeElement.clientHeight = 900;
   }
 
   onResize(event) {
