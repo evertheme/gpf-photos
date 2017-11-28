@@ -26,6 +26,8 @@ const forceSSL = function() {
 // middleware
 app.use(forceSSL());
 
+app.use("/assets", express.static(__dirname + '/dist/assets'));
+
 // ...
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
