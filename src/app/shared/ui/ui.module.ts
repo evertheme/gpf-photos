@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModules } from 'ng-mdb-pro';
 
 import { GlobalHeaderComponent } from './global-header/global-header.component';
 import { GlobalFooterComponent } from './global-footer/global-footer.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -16,11 +17,14 @@ import { GlobalFooterComponent } from './global-footer/global-footer.component';
   ],
   declarations: [
     GlobalHeaderComponent,
-    GlobalFooterComponent
+    GlobalFooterComponent,
+    ContactFormComponent
   ],
   exports: [
     GlobalHeaderComponent,
-    GlobalFooterComponent
-  ]
+    GlobalFooterComponent,
+    ContactFormComponent
+  ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class UiModule { }

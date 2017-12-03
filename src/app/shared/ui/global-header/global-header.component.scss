@@ -1,0 +1,26 @@
+.navbar-brand {
+  img {
+    max-height: 40px;
+  }
+}
+
+.nav-item {
+  .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-weight: 400;
+    color: #666;
+    &:hover {
+      color: #333;
+    }
+  }
+  &.active {
+    .nav-link {
+      background-color: transparent;
+      color: #76a244;
+      &:hover {
+        color: #76a244;
+      }
+    }
+  }
+}

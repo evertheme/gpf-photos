@@ -11,20 +11,20 @@ $spacing-half: 5px;
 //== Base
 //
 
-$gray-base:             #353D40		!default;
+$gray-base:       #353D40		!default;
 $red-base:				#E31B23 	!default;
 $orange-base:			#F68A33 	!default;
 $gold-base:				#FDBB30 	!default;
 $yellow-base:			#FFE512 	!default;
-$lt-green-base:			#C1D82F 	!default;
+$lt-green-base:		#C1D82F 	!default;
 $green-base:			#54B948 	!default;
-$teal-base:			    #00A19B 	!default;
-$cyan-base:			    #007FA3 	!default;
-$lt-blue-base:			#72CDF4 	!default;
+$teal-base:			  #00A19B 	!default;
+$cyan-base:			  #007FA3 	!default;
+$lt-blue-base:		#72CDF4 	!default;
 $blue-base:				#009DDC 	!default;
-$dk-blue-base:			#00539B 	!default;
+$dk-blue-base:		#00539B 	!default;
 $purple-base:			#92278F 	!default;
-$burgundy-base:			#96172E 	!default;
+$burgundy-base:		#96172E 	!default;
 
 
 
@@ -44,7 +44,7 @@ $gray-tint-92:			#EEEFEF 	!default;
 $gray-tint-95:			#F5F5F5 	!default;
 $gray-tint-97:			#F9F9F9 	!default;
 
-$red-shade-25:			#AB141A 	!default;
+$red-shade-25:		#AB141A 	!default;
 $red-tint-25:			#EA5359 	!default;
 $red-tint-50:			#F18D91 	!default;
 $red-tint-75:			#F8C6C8 	!default;
@@ -131,8 +131,8 @@ $burgundy-tint-75:		#E5C5CB 	!default;
 $burgundy-tint-90:		#F4E7EA 	!default;
 
 .ag-evertheme {
-  font-size: .9rem;
-  color: $gray-tint-25;
+  font-size: 1.3rem;
+  color: $gray-shade-50;
 
   :focus {
     outline: 0;

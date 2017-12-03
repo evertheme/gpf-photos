@@ -1,118 +1,32 @@
-<!--Double navigation-->
-<header>
-
-  <!-- Sidebar navigation -->
-  <mdb-sidenav #sidenav class="fixed" [fixed]="true">
-    <!-- Logo -->
-    <li>
-      <div class="logo-wrapper waves-light">
-        <a href="#">GPF</a>
-      </div>
-    </li>
-    <!--/. Logo -->
-    <!--Social-->
-    <li>
-      <ul class="social">
-        <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-        <li><a class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
-        <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-        <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+<mdb-navbar class="nav-bg" SideClass="navbar fixed-top navbar-expand-md navbar-light bg-white scrolling-navbar" [containerInside]="false">
+  <logo>
+    <a class="navbar-brand" href="#">
+      <img src="/assets/img/gpf-logo.png" alt="Garden Party Florist" />
+    </a>
+  </logo>
+  <links>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" href="#">Weddings</a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" href="#">Sympathy</a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" href="#">Occasions</a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+          <a class="nav-link" href="#">Gallery</a>
+        </li>
       </ul>
-    </li>
-    <!--/Social-->
-    <!--Search Form-->
-    <li>
-      <form class="search-form" role="search">
-        <div class="form-group waves-light" mdbRippleRadius>
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
-    </li>
-    <!--/.Search Form-->
-    <!-- Side navigation links -->
-    <li>
-      <ul class="collapsible collapsible-accordion">
-        <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
-
-          <!-- Collapsible link -->
-          <mdb-item>
-            <mdb-item-head mdbRippleRadius><i class="fa fa-chevron-right"></i> Collapsible menu</mdb-item-head>
-            <mdb-item-body>
-              <ul>
-                <li><a href="#" class="waves-effect" mdbRippleRadius>Link 1</a></li>
-                <li><a href="#" class="waves-effect" mdbRippleRadius>Link 2</a></li>
-              </ul>
-            </mdb-item-body>
-          </mdb-item>
-
-          <!-- Simple link -->
-          <mdb-item class="no-collase">
-            <mdb-item-head mdbRippleRadius><i class="fa fa-hand-pointer-o"></i> Simple link</mdb-item-head>
-            <mdb-item-body></mdb-item-body>
-          </mdb-item>
-
-          <!-- Collapsible link -->
-          <mdb-item>
-            <mdb-item-head mdbRippleRadius><i class="fa fa-eye"></i> Collapsible menu 2</mdb-item-head>
-            <mdb-item-body>
-              <ul>
-                <li><a href="#" class="waves-effect" mdbRippleRadius>Link 1</a></li>
-                <li><a href="#" class="waves-effect" mdbRippleRadius>Link 2</a></li>
-              </ul>
-            </mdb-item-body>
-          </mdb-item>
-
-          <!-- Simple link -->
-          <mdb-item class="no-collase">
-            <mdb-item-head mdbRippleRadius><i class="fa fa-diamond"></i> Simple link 2</mdb-item-head>
-            <mdb-item-body></mdb-item-body>
-          </mdb-item>
-
-        </mdb-squeezebox>
-      </ul>
-    </li>
-    <!--/. Side navigation links -->
-  </mdb-sidenav>
-  <!--/. Sidebar navigation -->
-
-  <!-- Navbar -->
-  <mdb-navbar SideClass="navbar fixed-top navbar-expand-md scrolling-navbar double-nav" [containerInside]="false">
-    <!-- SideNav slide-out button -->
-    <!--
-    <div class="float-xs-left">
-      <a (click)="sidenav.show()" class="button-collapse"><i class="fa fa-bars"></i></a>
-    </div>
-    -->
-    <!--/. SideNav slide-out button -->
-
-    <img src="/assets/img/gpf-logo.png" />
-
-    <!--
-    <ul class="nav navbar-nav nav-flex-icons ml-auto">
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>
-      </li>
-      <li class="nav-item dropdown btn-group" dropdown>
-        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-          Dropdown
-        </a>
-        <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-    -->
-
-  </mdb-navbar>
-  <!--/. Navbar -->
-
-</header>
-<!--/.Double navigation-->
+  </links>
+</mdb-navbar>

@@ -1,0 +1,24 @@
+<div class="media-body text-left">
+  <div class="excerpt">
+    <h5 class="text-center">Have a Question?</h5>
+    <p class="text-center">Drop us a line.</p>
+
+    <form>
+      <div class="md-form">
+        <input mdbActive type="text" type="text" id="contact-name" class="form-control" [(ngModel)]="contactInfo.name" />
+        <label for="contact-name" [ngClass]="{'active' : editData.name}">Name</label>
+      </div>
+      <div class="md-form">
+        <input mdbActive type="text" type="text" id="contact-email" class="form-control" [(ngModel)]="contactInfo.email" />
+        <label for="contact-email" [ngClass]="{'active' : editData.email}">Email Address</label>
+      </div>
+      <div class="md-form">
+        <textarea mdbActive type="text" id="contact-message" class="md-textarea" style="height: 100px"></textarea>
+        <label for="contact-message" [ngClass]="{'active' : editData.message}">Your message</label>
+      </div>
+      <div class="text-left">
+        <button class="btn btn-unique waves-light" mdbRippleRadius>Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+      </div>
+    </form>
+  </div>
+</div>
