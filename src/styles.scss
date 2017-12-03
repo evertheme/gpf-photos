@@ -45,6 +45,15 @@ body {
       }
     }
   }
+  p {
+    a {
+      font-weight: 700;
+      color: #333;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
   .feature-block {
     a {
       width:100%;
