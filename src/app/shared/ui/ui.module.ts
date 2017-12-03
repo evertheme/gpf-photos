@@ -5,7 +5,6 @@ import { MDBBootstrapModules } from 'ng-mdb-pro';
 
 import { GlobalHeaderComponent } from './global-header/global-header.component';
 import { GlobalFooterComponent } from './global-footer/global-footer.component';
-import { UserFormComponent } from './user-form/user-form.component';
 
 
 @NgModule({
@@ -17,13 +16,11 @@ import { UserFormComponent } from './user-form/user-form.component';
   ],
   declarations: [
     GlobalHeaderComponent,
-    GlobalFooterComponent,
-    UserFormComponent
+    GlobalFooterComponent
   ],
   exports: [
     GlobalHeaderComponent,
-    GlobalFooterComponent,
-    UserFormComponent
+    GlobalFooterComponent
   ]
 })
 export class UiModule { }

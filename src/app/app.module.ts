@@ -14,6 +14,11 @@ export const firebaseConfig = environment.firebaseConfig;
 import { AuthModule } from './auth/auth.module';
 import { UiModule } from './shared/ui/ui.module';
 import { HomeModule } from './feature/home/home.module';
+import { WeddingsModule } from './feature/weddings/weddings.module';
+import { OccasionsModule } from './feature/occasions/occasions.module';
+import { SympathyModule } from './feature/sympathy/sympathy.module';
+import { GalleryModule } from './feature/gallery/gallery.module';
+import { UserLoginModule } from './feature/user-login/user-login.module';
 import { InventoryModule } from './feature/inventory/inventory.module';
 
 @NgModule({
@@ -28,6 +33,11 @@ import { InventoryModule } from './feature/inventory/inventory.module';
     AuthModule,
     UiModule,
     HomeModule,
+    WeddingsModule,
+    OccasionsModule,
+    SympathyModule,
+    GalleryModule,
+    UserLoginModule,
     InventoryModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],

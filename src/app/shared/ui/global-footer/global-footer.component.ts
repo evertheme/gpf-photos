@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./global-footer.component.scss']
 })
 export class GlobalFooterComponent implements OnInit {
+  public startCRD: string;
+  public endCRD: string;
 
-  constructor() { }
+  constructor() {
+    this.startCRD = '2015';
+    this.endCRD = (new Date()).getFullYear().toString();
+  }
 
   ngOnInit() {
   }

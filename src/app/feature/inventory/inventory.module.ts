@@ -17,7 +17,6 @@ import { InventoryComponent } from './inventory.component';
 import { InventoryService } from './inventory.service';
 import { UploadInventoryComponent } from './upload-inventory/upload-inventory.component';
 
-import { ModalModule } from 'ng-mdb-pro/free';
 import { MDBBootstrapModules } from 'ng-mdb-pro';
 
 @NgModule({

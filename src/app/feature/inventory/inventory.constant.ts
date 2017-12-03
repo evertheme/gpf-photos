@@ -24,6 +24,15 @@ export const GRID: any = {
       'cellRendererFramework': ImageComponent
     },
     {
+      'headerName': 'ID',
+      'colId': 'oldId',
+      'field': 'oldId',
+      'width': 60,
+      'minWidth': 60,
+      'maxWidth': 60,
+      'cellRendererFramework': WrapTextComponent
+    },
+    {
       'headerName': 'Name',
       'colId': 'name',
       'field': 'name',

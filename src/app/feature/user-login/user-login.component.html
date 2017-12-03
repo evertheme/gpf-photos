@@ -1,44 +1,20 @@
-<div *ngIf="!auth.currentUser; else alreadyLoggedIn">
+<div class="row">
+  <div class="col-lg-4 col-md-3"></div>
+  <form class="col-lg-4 col-md-6" [formGroup]="userForm" (ngSubmit)="login()">
+    <p class="h5 text-center mb-4">Sign in</p>
 
-  <h3>Social Login</h3>
+    <div class="md-form form-sm">
+      <input mdbActive type="text" id="email" formControlName="email" class="form-control">
+      <label for="email">Your email</label>
+    </div>
 
+    <div class="md-form form-sm">
+      <input mdbActive type="password" id="password" formControlName="password" class="form-control">
+      <label for="password">Your password</label>
+    </div>
 
-    <button (click)="signInWithGoogle()" class="button btn-social btn-google">
-      <i class="fa fa-google-plus fa-lg"></i> Connect Google
-    </button>
-
-    <button (click)="signInWithGithub()" class="button btn-social btn-github" disabled>
-      <i class="fa fa-github fa-lg"></i> Connect GitHub
-    </button>
-
-    <button (click)="signInWithFacebook()" class="button  btn-social btn-facebook" disabled>
-      <i class="fa fa-facebook fa-lg"></i> Connect Facebook
-    </button>
-
-    <button (click)="signInWithTwitter()" class="button  btn-social btn-twitter" disabled>
-      <i class="fa fa-twitter fa-lg"></i> Connect Twitter
-    </button>
-
-    <hr>
-
-    <h3>Anonymous Login</h3>
-
-      <button (click)="signInAnonymously()" class="button button-info">
-        <i class="fa fa-user-secret fa-lg"></i> Connect Anonymously
-      </button>
-
-    <hr>
-
-
-    <user-form></user-form>
-
+    <div class="text-center">
+      <button mdbRippleRadius class="btn btn-default waves-light" [disabled]="!userForm.valid">Login</button>
+    </div>
+  </form>
 </div>
-
-
-
-
-<ng-template #alreadyLoggedIn>
-  <p class="text-success">
-    Already logged in!
-  </p>
-</ng-template>

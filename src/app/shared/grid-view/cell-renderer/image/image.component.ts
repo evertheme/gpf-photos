@@ -1,26 +1,17 @@
-import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular/main';
 
 @Component({
     selector: 'app-image',
     templateUrl: './image.component.html'
 })
-export class ImageComponent implements ICellRendererAngularComp, AfterViewInit {
+export class ImageComponent implements ICellRendererAngularComp {
     public params: any;
 
-    constructor(private changeDetectorRef: ChangeDetectorRef) {}
+    constructor() {}
 
     agInit(params: any): void {
         this.params = params;
-    }
-
-    onImageClick(): void {
-      console.log('image clicked');
-      console.log('params: ', this.params);
-    }
-
-    ngAfterViewInit(): void {
-        this.changeDetectorRef.detectChanges();
     }
 
     refresh(): boolean {

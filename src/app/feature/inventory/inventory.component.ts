@@ -1,12 +1,27 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, EventEmitter } from '@angular/core';
 import { GridOptions } from 'ag-grid';
 import { ModalDirective } from 'ng-mdb-pro/free/modals/modal.directive';
 import * as _ from 'lodash';
 
+import { UploadFile, UploadInput, UploadOutput } from 'ng-mdb-pro/pro';
+import { humanizeBytes } from 'ng-mdb-pro/pro/file-input';
+
 import { GRID } from './inventory.constant';
-// import { Image } from './inventory.interface';
 import { InventoryService } from './inventory.service';
 import { Subscription } from 'rxjs/Subscription';
+
+export class Upload {
+  $key: string;
+  file: File;
+  name: string;
+  url: string;
+  progress: number;
+  createdAt: Date = new Date();
+
+  constructor(file: File) {
+    this.file = file;
+  }
+}
 
 @Component({
   selector: 'app-inventory',
@@ -14,6 +29,15 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit, OnDestroy, AfterViewInit {
+
+  formData: FormData;
+  files: UploadFile[];
+  uploadInput: EventEmitter<UploadInput>;
+  humanizeBytes: Function;
+  dragOver: boolean;
+
+  currentUpload: Upload;
+  selectedFiles: FileList;
 
   public images: any[];
   public gridOptions: GridOptions;
@@ -23,12 +47,15 @@ export class InventoryComponent implements OnInit, OnDestroy, AfterViewInit {
   public gridHeight: number;
   public newTag: string;
 
-
   @ViewChild('editImageForm') public editImageModal: ModalDirective;
+  @ViewChild('addImageForm') public addImageModal: ModalDirective;
 
   private currentFilter: any;
 
   constructor(private inventoryService: InventoryService) {
+    this.files = [];
+    this.uploadInput = new EventEmitter<UploadInput>();
+    this.humanizeBytes = humanizeBytes;
     this.editData = {
       oldId: '',
       fileName: '',
@@ -60,9 +87,11 @@ export class InventoryComponent implements OnInit, OnDestroy, AfterViewInit {
           .getData()
           .subscribe(
             rowData => {
-              this.images = rowData;
+              this.images = _.remove(rowData, function(img) {
+                return img.category !== 'home';
+              });
               if (this.gridOptions.api) {
-                console.log('this.gridOptions.api exists');
+                // console.log('this.gridOptions.api exists');
                 this.gridOptions.api.setRowData(this.images);
               }
             }
@@ -110,12 +139,100 @@ export class InventoryComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onRowClicked(params) {
     // console.log('onRowClicked: params: ', params);
-    console.log('this.editImageModal: ', this.editImageModal);
+    // console.log('this.editImageModal: ', this.editImageModal);
     this.currentImage = params.data;
     this.editData = this.currentImage;
-    console.log('this.editData: ', this.editData);
+    // console.log('this.editData: ', this.editData);
     this.editImageModal.show();
-    console.log('editImageModal: ', this.editImageModal);
+    // console.log('editImageModal: ', this.editImageModal);
+  }
+
+  onUploadImage() {
+    console.log('files: ', this.files);
+    const files = this.selectedFiles;
+    if (_.isEmpty(files)) {
+      return;
+    }
+
+    const filesIndex = _.range(files.length);
+    _.each(filesIndex, (idx) => {
+        this.currentUpload = new Upload(files[idx]);
+        this.inventoryService.pushUpload(this.currentUpload);
+      }
+    );
+  }
+
+  uploadMulti() {
+    const files = this.selectedFiles;
+    if (_.isEmpty(files)) {
+      return;
+    }
+
+    const filesIndex = _.range(files.length);
+    _.each(filesIndex, (idx) => {
+        this.currentUpload = new Upload(files[idx]);
+        this.inventoryService.pushUpload(this.currentUpload);
+      }
+    );
+  }
+
+
+  onUploadCancel() {
+    this.addImageModal.hide();
+  }
+
+  detectFiles(event) {
+    this.selectedFiles = event.target.files;
+  }
+
+
+  showFiles() {
+    let files = '';
+    for (let i = 0; i < this.files.length; i ++) {
+      files += this.files[i].name;
+      if (!(this.files.length - 1 === i)) {
+        files += ', ';
+      }
+    }
+    return files;
+  }
+
+  startUpload(): void {
+    const event: UploadInput = {
+      type: 'uploadAll',
+      url: '/upload',
+      method: 'POST',
+      data: { foo: 'bar' },
+      concurrency: 1
+    };
+
+    this.uploadInput.emit(event);
+  }
+
+  cancelUpload(id: string): void {
+    this.uploadInput.emit({ type: 'cancel', id: id });
+  }
+
+  onUploadOutput(output: UploadOutput): void {
+
+    if (output.type === 'allAddedToQueue') {
+    } else if (output.type === 'addedToQueue') {
+      this.files.push(output.file); // add file to array when added
+    } else if (output.type === 'uploading') {
+      // update current data in files array for uploading file
+      const index = this.files.findIndex(file => file.id === output.file.id);
+      this.files[index] = output.file;
+    } else if (output.type === 'removed') {
+      // remove file from array when removed
+      this.files = this.files.filter((file: UploadFile) => file !== output.file);
+    } else if (output.type === 'dragOver') {
+      this.dragOver = true;
+    } else if (output.type === 'dragOut') {
+    } else if (output.type === 'drop') {
+      this.dragOver = false;
+    }
+    this.showFiles();
+
   }
 
   onResize(event) {

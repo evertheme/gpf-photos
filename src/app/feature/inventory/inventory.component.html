@@ -108,4 +108,98 @@
     </div>
   </div>
   <!--Modal: Login with Avatar Form-->
+
+  <!--Modal: upload form-->
+  <div mdbModal #addImageForm="mdb-modal" class="modal fade" id="addImageForm" tabindex="-1" role="dialog" aria-labelledby="Add Image" aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-avatar modal-fluid" role="document">
+      <!--Content-->
+      <div class="modal-content">
+
+        <!--Body-->
+        <div class="modal-body text-center">
+          <div class="row">
+            <div class="file-field">
+              <div class="btn btn-primary btn-sm waves-light" mdbRippleRadius>
+                <span>Choose file</span>
+                <input type="file" mdbFileSelect (change)="detectFiles($event)" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-sm-4">
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="upload-name" class="form-control" [(ngModel)]="editData.name" />
+                <label for="name" [ngClass]="{'active' : editData.name}">Name</label>
+              </div>
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="upload-description" class="form-control" [(ngModel)]="editData.caption" />
+                <label for="description" [ngClass]="{'active' : editData.caption}">Description</label>
+              </div>
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="upload-credits" class="form-control" [(ngModel)]="editData.credit" />
+                <label for="credits" [ngClass]="{'active' : editData.credit}">Photo Credits</label>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="text" id="upload-id" class="form-control" [(ngModel)]="editData.oldId" />
+                <label for="id" [ngClass]="{'active' : editData.oldId}">ID</label>
+              </div>
+
+              <div class="md-form form-sm">
+                <input mdbActive type="text" type="number" id="upload-price" class="form-control" [(ngModel)]="editData.price" />
+                <label for="price" [ngClass]="{'active' : editData.price}">Price</label>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="md-form form-sm">
+                    <input mdbActive type="text" class="form-control" [(ngModel)]="newTag" id="upload-tags">
+                    <label for="tags">Tag</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <button (click)="addTag()" class="btn btn-blue-grey btn-sm waves-light photo-tags-button" mdbRippleRadius type="button">Add Tag</button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-sm-4 text-left">
+              <div class="border-bottom">Tags</div>
+              <button type="button" *ngFor="let tag of editData.tags" (click)="removeTag(tag)" class="btn btn-info btn-rounded btn-sm waves-light photo-tags-button" mdbRippleRadius>{{tag}}&nbsp;&nbsp;<span class="fa fa-times"></span></button>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="text-left">
+                <div class="form-group  form-sm">
+                  <input type="checkbox" class="filled-in" id="upload-archived" [(ngModel)]="editData.archive">
+                  <label for="archived">Archive</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="text-right">
+                <button (click)="onUploadCancel()" class="btn btn-secondary btn-sm btn-cyan mt-1 waves-light" mdbRippleRadius>Cancel</button>
+                <button (click)="onUploadImage()" class="btn btn-green mt-1 waves-light" mdbRippleRadius>Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: Login with Avatar Form-->
 </div>
