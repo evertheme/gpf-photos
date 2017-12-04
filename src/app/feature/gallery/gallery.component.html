@@ -1,9 +1,27 @@
-<div class="container">
+<div class="container page-content">
   <div class="row mt-5 pt-5">
-    <div class="col text-center" style="height: 800px;">
-      <p>
-        gallery works!
-      </p>
+    <div class="col">
+      <h5>
+        {{pageTitle}}<br />
+      </h5>
+      <div class="row mb-5">
+        <div *ngFor="let img of images" class="col-sm-4 col-md-3 col-lg-2 mt-5">
+          <img class="w-100" src="/assets/img/inventory/{{img.fileName}}" (click)="currentImage = img.fileName; imageModal.show()" />
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+<div mdbModal #imageModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img src="/assets/img/inventory/{{currentImage}}" />
+      </div>
+    </div>
+  </div>
+</div>
+
+

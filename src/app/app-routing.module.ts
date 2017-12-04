@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'sympathy', component: SympathyComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'gallery', component: GalleryComponent },
+  { path: 'gallery/:page', component: GalleryComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] }
 ];
