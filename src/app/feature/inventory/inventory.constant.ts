@@ -629,7 +629,7 @@ export const GRID: any = {
       "height": 250,
       "newId": "",
       "oldId": "M-55",
-      "name": "Mom’s Garden",
+      "name": "Mom's Garden",
       "price": 45,
       "caption": "",
       "credit": "",

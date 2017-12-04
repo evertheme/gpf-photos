@@ -17,6 +17,8 @@ import { HomeModule } from './feature/home/home.module';
 import { WeddingsModule } from './feature/weddings/weddings.module';
 import { OccasionsModule } from './feature/occasions/occasions.module';
 import { SympathyModule } from './feature/sympathy/sympathy.module';
+import { AboutModule } from './feature/about/about.module';
+import { ContactModule } from './feature/contact/contact.module';
 import { GalleryModule } from './feature/gallery/gallery.module';
 import { UserLoginModule } from './feature/user-login/user-login.module';
 import { InventoryModule } from './feature/inventory/inventory.module';
@@ -35,8 +37,10 @@ import { InventoryModule } from './feature/inventory/inventory.module';
     HomeModule,
     WeddingsModule,
     OccasionsModule,
+    ContactModule,
     SympathyModule,
     GalleryModule,
+    AboutModule,
     UserLoginModule,
     InventoryModule,
     AngularFireModule.initializeApp(firebaseConfig)

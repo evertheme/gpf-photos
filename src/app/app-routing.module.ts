@@ -8,6 +8,8 @@ import { InventoryComponent } from './feature/inventory/inventory.component';
 import { WeddingsComponent } from './feature/weddings/weddings.component';
 import { OccasionsComponent } from './feature/occasions/occasions.component';
 import { SympathyComponent } from './feature/sympathy/sympathy.component';
+import { AboutComponent } from './feature/about/about.component';
+import { ContactComponent } from './feature/contact/contact.component';
 import { GalleryComponent } from './feature/gallery/gallery.component';
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'weddings', component: WeddingsComponent },
   { path: 'occasions', component: OccasionsComponent },
   { path: 'sympathy', component: SympathyComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] }
