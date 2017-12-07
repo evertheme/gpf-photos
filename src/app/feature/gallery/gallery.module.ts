@@ -5,11 +5,14 @@ import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery.component';
 
 import { MDBBootstrapModules } from '../../shared/mdb/mdb.module';
+import { InventoryModule } from '../inventory/inventory.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    GalleryRoutingModule
+    GalleryRoutingModule,
+    InventoryModule,
+    MDBBootstrapModules
   ],
   declarations: [GalleryComponent]
 })

@@ -26,6 +26,7 @@ import { MDBBootstrapModules } from '../../shared/mdb/mdb.module';
     InventoryRoutingModule,
     AngularFirestoreModule.enablePersistence(),
     GridViewModule,
+    MDBBootstrapModules,
     AgGridModule.withComponents([
       CurrencyComponent,
       DeleteRowComponent,
