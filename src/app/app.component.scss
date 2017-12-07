@@ -1,8 +1,15 @@
 .page-bg {
-  background: transparent url(/assets/img/feature/main-bg-top.jpg) no-repeat 10% 60px;
+  background: transparent url(/assets/img/feature/main-bg-top.jpg) no-repeat 10% 80px;
   height: 80%;
   width:100%;
   background-size: 110%;
   position: fixed;
   top: -5px;
 }
+
+@media (min-width: 768px) {
+  .page-bg {
+    background-position-y: 120px;
+  }
+}
+
