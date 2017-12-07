@@ -31,7 +31,7 @@ body {
 }
 
 .page-content {
-  margin-top: 80px;
+  margin-top: 90px;
   h5 {
     font-size: 2.2rem;
     font-family: "Playfair Display", Helvetica, serif;
@@ -68,6 +68,15 @@ body {
     margin-right: 9px;
     margin-bottom: 9px;
     width: 52px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    flex-flow: column nowrap;
+  }
+  .page-content {
+    margin-top: 130px;
   }
 }
 

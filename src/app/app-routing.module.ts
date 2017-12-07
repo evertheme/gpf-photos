@@ -1,36 +1,31 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AuthGuard } from './auth/auth.guard';
-import { HomeComponent } from './feature/home/home.component';
-import { UserLoginComponent } from './feature/user-login/user-login.component';
-import { InventoryComponent } from './feature/inventory/inventory.component';
-import { WeddingsComponent } from './feature/weddings/weddings.component';
-import { OccasionsComponent } from './feature/occasions/occasions.component';
-import { SympathyComponent } from './feature/sympathy/sympathy.component';
-import { AboutComponent } from './feature/about/about.component';
-import { ContactComponent } from './feature/contact/contact.component';
-import { GalleryComponent } from './feature/gallery/gallery.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'weddings', component: WeddingsComponent },
-  { path: 'occasions', component: OccasionsComponent },
-  { path: 'sympathy', component: SympathyComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'gallery/:page', component: GalleryComponent },
-  { path: 'login', component: UserLoginComponent },
-  { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] }
+  { path: '', loadChildren: './feature/home/home.module#HomeModule' },
+  { path: 'weddings', loadChildren: './feature/weddings/weddings.module#WeddingsModule' },
+  { path: 'occasions', loadChildren: './feature/occasions/occasions.module#OccasionsModule' },
+  { path: 'sympathy', loadChildren: './feature/sympathy/sympathy.module#SympathyModule' },
+  { path: 'about', loadChildren: './feature/about/about.module#AboutModule' },
+  { path: 'contact', loadChildren: './feature/contact/contact.module#ContactModule' },
+  { path: 'gallery/:page', loadChildren: './feature/gallery/gallery.module#GalleryModule' },
+  { path: 'login', loadChildren: './feature/login/login.module#LoginModule' },
+  { path: 'inventory', loadChildren: './feature/inventory/inventory.module#InventoryModule', canActivate: [AuthGuard] }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   exports: [
     RouterModule
   ],
   providers: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}

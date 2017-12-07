@@ -12,16 +12,7 @@ export const firebaseConfig = environment.firebaseConfig;
 
 // Shared
 import { AuthModule } from './auth/auth.module';
-import { UiModule } from './shared/ui/ui.module';
-import { HomeModule } from './feature/home/home.module';
-import { WeddingsModule } from './feature/weddings/weddings.module';
-import { OccasionsModule } from './feature/occasions/occasions.module';
-import { SympathyModule } from './feature/sympathy/sympathy.module';
-import { AboutModule } from './feature/about/about.module';
-import { ContactModule } from './feature/contact/contact.module';
-import { GalleryModule } from './feature/gallery/gallery.module';
-import { UserLoginModule } from './feature/user-login/user-login.module';
-import { InventoryModule } from './feature/inventory/inventory.module';
+import { UIModule } from './shared/ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -33,16 +24,7 @@ import { InventoryModule } from './feature/inventory/inventory.module';
     AngularFireModule,
     AngularFireDatabaseModule,
     AuthModule,
-    UiModule,
-    HomeModule,
-    WeddingsModule,
-    OccasionsModule,
-    ContactModule,
-    SympathyModule,
-    GalleryModule,
-    AboutModule,
-    UserLoginModule,
-    InventoryModule,
+    UIModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

@@ -1,0 +1,26 @@
+<div class="container page-content">
+  <div class="row mt-5 pt-5 mb-5 pb-5">
+    <div class="col mt-5 pt-5">
+      <div class="row mb-5 pb-5">
+        <div class="col-lg-4 col-md-3"></div>
+        <form class="col-lg-4 col-md-6" [formGroup]="userForm" (ngSubmit)="login()">
+          <h5 class="mb-5">Sign in</h5>
+
+          <div class="md-form">
+            <input mdbActive type="text" id="email" formControlName="email" class="form-control">
+            <label for="email">Your email</label>
+          </div>
+
+          <div class="md-form">
+            <input mdbActive type="password" id="password" formControlName="password" class="form-control">
+            <label for="password">Your password</label>
+          </div>
+
+          <div class="text-center">
+            <button mdbRippleRadius class="btn btn-default waves-light" [disabled]="!userForm.valid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,7 @@
 //Install express server
 const express = require('express');
-const app = express();
 const path = require('path');
-
-
-// Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist'));
+const app = express();
 
 // If an incoming request uses
 // a protocol other than HTTPS,
@@ -21,14 +17,18 @@ const forceSSL = function() {
     next();
   }
 };
+
 // Instruct the app
 // to use the forceSSL
 // middleware
 app.use(forceSSL());
 
+// Serve only the static files form the /dist directory
+app.use(express.static(__dirname + '/dist'));
+
+// Serve only the static files form the /dist/assets directory
 app.use("/assets", express.static(__dirname + '/dist/assets'));
 
-// ...
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
 app.get('/*', function(req, res) {
