@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MDBBootstrapModules } from 'ng-mdb-pro';
 
-import { UiModule } from '../../shared/ui/ui.module';
+import { UIModule } from '../../shared/ui/ui.module';
 import { UserLoginRoutingModule } from './user-login-routing.module';
 import { UserLoginComponent } from './user-login.component';
 
@@ -15,7 +15,7 @@ import { UserLoginComponent } from './user-login.component';
     ReactiveFormsModule,
     MDBBootstrapModules,
     UserLoginRoutingModule,
-    UiModule
+    UIModule
   ],
   declarations: [UserLoginComponent]
 })

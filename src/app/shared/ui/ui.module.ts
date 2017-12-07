@@ -27,4 +27,4 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
   ],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
-export class UiModule { }
+export class UIModule { }
