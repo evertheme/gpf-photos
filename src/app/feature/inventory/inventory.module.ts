@@ -17,7 +17,7 @@ import { InventoryComponent } from './inventory.component';
 import { InventoryService } from './inventory.service';
 import { UploadInventoryComponent } from './upload-inventory/upload-inventory.component';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { MDBBootstrapModules } from '../../shared/mdb/mdb.module';
 
 @NgModule({
   imports: [
@@ -26,7 +26,6 @@ import { MDBBootstrapModules } from 'ng-mdb-pro';
     InventoryRoutingModule,
     AngularFirestoreModule.enablePersistence(),
     GridViewModule,
-    MDBBootstrapModules.forRoot(),
     AgGridModule.withComponents([
       CurrencyComponent,
       DeleteRowComponent,

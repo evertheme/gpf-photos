@@ -8,10 +8,10 @@ type FormErrors = { [u in UserFields]: string };
 
 @Component({
   selector: 'app-user-login',
-  templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.scss']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class UserLoginComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   initForm: boolean;
   userForm: FormGroup;

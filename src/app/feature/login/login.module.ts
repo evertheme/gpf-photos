@@ -2,21 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MDBBootstrapModules } from 'ng-mdb-pro';
+// import { MDBBootstrapModules } from 'ng-mdb-pro';
 
 import { UIModule } from '../../shared/ui/ui.module';
-import { UserLoginRoutingModule } from './user-login-routing.module';
-import { UserLoginComponent } from './user-login.component';
+import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MDBBootstrapModules,
-    UserLoginRoutingModule,
+    LoginRoutingModule,
     UIModule
   ],
-  declarations: [UserLoginComponent]
+  declarations: [LoginComponent]
 })
-export class UserLoginModule { }
+export class LoginModule { }
