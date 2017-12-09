@@ -26,6 +26,23 @@ body {
   color: #333;
 }
 
+.page-bg {
+  background: transparent url(/assets/img/feature/main-bg-top.jpg) no-repeat 10% 120px;
+  height: 80%;
+  width:100%;
+  background-size: 110%;
+  position: fixed;
+  top: -5px;
+}
+
+@media (max-width: 767px) {
+  .page-bg {
+    background-position-y: 80px;
+  }
+}
+
+
+
 .btn.btn-sm {
   font-size: 1.2rem;
 }
