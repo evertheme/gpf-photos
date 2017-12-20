@@ -1,6 +1,6 @@
 {
   "name": "garden-party-florist",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

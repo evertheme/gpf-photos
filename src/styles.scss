@@ -26,9 +26,13 @@ body {
   color: #333;
 }
 
+main {
+  min-height: 400px;
+}
+
 .page-bg {
   background: transparent url(/assets/img/feature/main-bg-top.jpg) no-repeat 10% 120px;
-  height: 80%;
+  min-height: 800px;
   width:100%;
   background-size: 110%;
   position: fixed;

@@ -5,8 +5,9 @@
         {{pageTitle}}<br />
       </h5>
       <div class="row mb-5">
-        <div *ngFor="let img of images" class="col-sm-4 col-md-3 col-lg-2 mt-5">
-          <img class="w-100" src="/assets/img/inventory/{{img.fileName}}" (click)="currentImage = img.fileName; imageModal.show()" />
+        <div *ngFor="let img of images" (click)="currentImage = img; imageModal.show();" class="col-sm-4 col-md-3 col-lg-2 mt-5">
+          <img class="w-100" src="/assets/img/inventory/{{img.fileName}}" />
+          <div class="w-100" >{{img.oldId}}</div>
         </div>
       </div>
     </div>
@@ -14,11 +15,17 @@
 </div>
 
 
-<div mdbModal #imageModal="mdb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+<div mdbModal #imageModal="mdb-modal" *ngIf="currentImage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body text-center">
-        <img src="/assets/img/inventory/{{currentImage}}" />
+        <img src="/assets/img/inventory/{{currentImage.fileName}}" />
+        <div class="img-title">
+          {{currentImage.oldId}}
+        </div>
+        <a href="javascript:;" class="close" (click)="imageModal.hide();">
+          <span class="fa fa-lg fa-times"></span>
+        </a>
       </div>
     </div>
   </div>

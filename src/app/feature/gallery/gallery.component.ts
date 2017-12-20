@@ -17,7 +17,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
   public page: string;
   public pageTitle: string;
   public images: any[];
-  public currentImage: string;
+  public currentImage: any;
 
   @ViewChild('imageModal') public imageModal: ModalDirective;
 
@@ -36,6 +36,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
         .getData()
         .subscribe(imagesData => {
           this.images = imagesData;
+          this.currentImage = this.images[0];
           this.setName();
         });
     });
