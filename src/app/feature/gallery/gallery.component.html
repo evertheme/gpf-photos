@@ -6,7 +6,7 @@
       </h5>
       <div class="row mb-5">
         <div *ngFor="let img of images" (click)="currentImage = img; imageModal.show();" class="col-sm-4 col-md-3 col-lg-2 mt-5">
-          <img class="w-100" src="/assets/img/inventory/{{img.fileName}}" />
+          <img class="w-100" src="/assets/img/inventory/lg/{{img.fileName}}" />
           <div class="w-100" >{{img.oldId}}</div>
         </div>
       </div>
@@ -17,9 +17,10 @@
 
 <div mdbModal #imageModal="mdb-modal" *ngIf="currentImage" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
+    <!-- <div class="modal-content" [ngStyle]="{'background-image': 'url(/assets/img/inventory/lg/' + currentImage.fileName + ')'}"> -->
     <div class="modal-content">
       <div class="modal-body text-center">
-        <img src="/assets/img/inventory/{{currentImage.fileName}}" />
+        <img [src]="makeSourceUrl(currentImage.fileName)" (load)="imageLoad($event)" />
         <div class="img-title">
           {{currentImage.oldId}}
         </div>

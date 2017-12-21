@@ -82,13 +82,29 @@ export class GalleryComponent implements OnInit, OnDestroy {
     console.log('setName: this.images', this.images);
   }
 
+  makeSourceUrl(fileName) {
+    return '/assets/img/inventory/lg/' + fileName;
+  }
+
+  imageLoad(event) {
+    console.log('imageLoad: event: ', event.target.width);
+    console.log('imageLoad: event: ', event.target.height);
+  }
+/*
+  imgSize(){
+    const img = document.querySelector("#sky");
+    const realWidth = img.naturalWidth;
+    const realHeight = img.naturalHeight;
+    console.log('Original width=' + realWidth + ', ' + 'Original height=' + realHeight);
+  }
+*/
   filterImages(category: string, tag: string) {
     _.remove(this.images, function(img) {
       return img.category !== category;
     });
     if (tag) {
       _.remove(this.images, function(img) {
-        return !_.includes(img, tag);
+        return !_.includes(img.tags, new RegExp(tag, 'i'));
       });
     }
   }
